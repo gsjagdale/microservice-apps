@@ -1,0 +1,35 @@
+server:
+  port: 8888
+spring:
+  profiles.active: native    # use only local config, don't fetch from remote git repo
+  application:
+    name: config-server
+  cloud:
+    config:
+      allowOverride: true
+      overrideNone: true
+      overrideSystemProperties: false
+      server:
+        git:
+          refresh-rate: -1
+          # default-label: master
+          # clone-on-start: true
+          # uri: https://github.com/gsjagdale/shri-app-config.git
+          uri: file://mnt/personal/code/shri-app-config
+        native:
+          searchLocations: file:///mnt/personal/code/shri-app-config
+management:
+  security:
+    enabled: false
+  endpoints.web.exposure.include: "*"
+  endpoint.health.show.details: always
+elk:
+  enable: true
+  logstash:
+    server: 10.160.10.51
+    port: 5000
+logging:
+  file:
+    path: /home/shrikar/app-logs/config-logger.log
+# logstash:
+#   destination: localhost:8080

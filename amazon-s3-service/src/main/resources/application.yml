@@ -1,0 +1,11 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: amazon-s3-service
+
+aws:
+  username: minioadmin
+  password: minioadmin
+  url: http://localhost:9000
+  forcePathStyle: true

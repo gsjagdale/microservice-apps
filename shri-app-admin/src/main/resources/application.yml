@@ -1,0 +1,18 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: admin-service
+  boot.admin.context-path: /admin
+  # cloud:
+  #   config:
+  #     config.enabled: false
+  #     server:
+  #       git:
+  #         uri: https://github.com/gsjagdale/shri-app-config.git
+  thymeleaf.check-template-location: false #check what is thymeleaf use
+  config.import: optional:configserver:http://localhost:8888
+
+management:
+  security:
+    enabled: false
