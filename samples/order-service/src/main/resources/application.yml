@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: order-service
+  sleuth.sampler.probability: 1.0
+  zipkin.base-url: http://ip172-18-0-13-cqvc5c2im2rg00en8h2g-9411.direct.labs.play-with-docker.com/
+  config:
+    import: optional:configserver:http://localhost:8888

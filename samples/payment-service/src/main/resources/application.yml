@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: payment-service
+#  h2:
+#    console:
+#      enabled: true
+#      settings:
+#        trace: true
+#        web-allow-others: true
+  datasource:
+    url: jdbc:h2:file:~/test;AUTO_SERVER=TRUE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+spring.jpa:
+  generate-ddl: true
+  #  defer-datasource-initialization: true
+  #  properties:
+  #    hibernate:
+  #      globally_quoted_identifiers: true
+  hibernate:
+    dialect: org.hibernate.dialect.H2Dialect
+    auto-ddl: update
